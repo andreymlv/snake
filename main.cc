@@ -1,13 +1,13 @@
-
-#include "window.h"
+// Copyright (c) 2021 Andrey Malov
 
 #include <cstdio>
 
-int main(int argc, char const *argv[])
-{
-    printf("Hello! Welcome to The Snake Game!\n");
+#include "snake/window.h"
 
-    Window wnd;
+int main(int argc, char const *argv[]) {
+  printf("Hello! Welcome to The Snake Game!\n");
 
-    return 0;
+  Window wnd;
+
+  return 0;
 }

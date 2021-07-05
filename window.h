@@ -1,29 +1,36 @@
-#ifndef SNAKE_WINDOW_H_
-#define SNAKE_WINDOW_H_
+// Copyright(c) 2021 Andrey Malov
+
+#ifndef WINDOW_H_
+#define WINDOW_H_
 
 #include <SDL2/SDL.h>
 
-class Window
-{
-private:
-    // The window we'll be rendering to
-    SDL_Window *window_ = NULL;
+class Window {
+ public:
+  Window();
+  ~Window();
 
-    // The surface contained by the window
-    SDL_Surface *screen_ = NULL;
+ private:
+  // The window we'll be rendering to
+  SDL_Window *window_ = NULL;
 
-    // The image we will load and show on the screen
-    SDL_Surface *image_ = NULL;
+  // The surface contained by the window
+  SDL_Surface *screen_ = NULL;
 
-    // Starts up SDL and creates window
-    bool Init();
+  // The image we will load and show on the screen
+  SDL_Surface *image_ = NULL;
 
-    // Loads media
-    bool LoadMedia();
+  // Event handler
+  SDL_Event event_handler_;
 
-public:
-    Window();
-    ~Window();
+  // Main loop flag
+  bool quit = false;
+
+  // Starts up SDL and creates window
+  bool Init();
+
+  // Loads media
+  bool LoadMedia();
 };
 
-#endif // SNAKE_WINDOW_H_
+#endif  // WINDOW_H_
